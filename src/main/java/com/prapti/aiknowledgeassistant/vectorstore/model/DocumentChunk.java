@@ -1,6 +1,5 @@
 package com.prapti.aiknowledgeassistant.vectorstore.model;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
@@ -11,6 +10,10 @@ import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
+
+/**
+ * Entity representing a stored document chunk and its vector embedding
+ */
 
 @Entity
 @Table(name = "document_chunks")
@@ -28,7 +31,7 @@ public class DocumentChunk {
     @Column(name = "chunk_text", columnDefinition = "TEXT", nullable = false)
     private String chunkText;
 
-    @Column(name = "embedding", columnDefinition = "vector(1536)")
+    @Column(name = "embedding", columnDefinition = "vector(1536)", nullable = false)
     private List<Double> embedding;
 
     @Column(name = "created_at")
