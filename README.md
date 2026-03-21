@@ -305,15 +305,14 @@ Although the current focus is **engineering knowledge retrieval**, the architect
 
 ## Development Status
 
-The backend foundation is currently under development.
+* The backend ingestion pipeline and core system architecture are implemented.
+* Integration and validation of the end-to-end RAG pipeline including embedding generation, vector retrieval and LLM-based response generation are currently in progress.
 
 ### Current Focus
 
-* Document ingestion pipeline
-* Text extraction and chunking
-* Embedding generation
-* Vector database integration
-* Retrieval-based question answering
+* Completing OpenAI embedding integration and end-to-end pipeline testing.
+* Validating vector storage and similarity search using pgvector.
+* Implementing retrieval and RAG-based question answering.
 
 ### Upcoming Improvements
 
