@@ -1,8 +1,11 @@
 # AI Internal Knowledge Assistant
 
-![System Overview](screenshots/knowledge-assistant-diagram.png)
 
-Treat internal engineering knowledge as something that can be **queried, not hunted**.
+## Concept Overview
+
+![Concept Overview](screenshots/knowledge-assistant-diagram.png)
+
+Treat internal engineering knowledge as something that can be **queried instantly, not hunted manually or extracted from individuals**.
 
 Modern software teams invest significant effort in documentation — architecture notes, runbooks, code comments, and onboarding guides.
 
@@ -77,6 +80,8 @@ The goal is **not to add AI for the sake of it**, but to improve **knowledge acc
 ## Solution Overview
 
 The system uses a **Retrieval-Augmented Generation (RAG)** architecture.
+
+![Knowledge Pipeline](screenshots/knowledge-pipeline-diagram.png)
 
 Internal documents are processed into semantic embeddings and stored in a vector database. When a question is asked, relevant information is retrieved and passed to an LLM to generate a contextual answer.
 
@@ -305,23 +310,34 @@ Although the current focus is **engineering knowledge retrieval**, the architect
 
 ## Development Status
 
-* The backend ingestion pipeline and core system architecture are implemented.
-* Integration and validation of the end-to-end RAG pipeline including embedding generation, vector retrieval and LLM-based response generation are currently in progress.
+The core backend architecture and document ingestion pipeline have been successfully implemented.
 
-### Current Focus
+The system currently supports document processing, chunking, and vector storage, forming the foundation of a Retrieval-Augmented Generation (RAG) pipeline.
 
-* Completing OpenAI embedding integration and end-to-end pipeline testing.
-* Validating vector storage and similarity search using pgvector.
-* Implementing retrieval and RAG-based question answering.
-
-### Upcoming Improvements
-
-* React-based chat interface
-* Asynchronous ingestion with RabbitMQ
-* MinIO document storage
-* Streaming responses
+End-to-end validation of the pipeline — including embedding generation, semantic retrieval, and LLM-based response generation — is actively in progress.
 
 ---
+
+## Current Focus
+
+- Integrating OpenAI embeddings for accurate semantic representation
+- Validating vector storage and similarity search using pgvector
+- Implementing retrieval flow and context-aware RAG-based question answering
+- Ensuring response grounding to minimize hallucinations
+
+---
+
+## Upcoming Improvements
+
+- React-based chat interface for real-time interaction
+- Asynchronous document ingestion using RabbitMQ
+- Scalable document storage using MinIO
+- Streaming responses for improved user experience
+- Authentication and access control (Spring Security)
+
+---
+
+This project is being developed with a focus on production-grade architecture, modular design, and real-world applicability in engineering teams.
 
 ## Author
 
